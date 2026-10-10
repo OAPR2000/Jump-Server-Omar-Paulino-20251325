@@ -7,7 +7,7 @@
 
 ## Video de demostración
 
-ENLACE_DEL_VIDEO
+https://youtu.be/eZrzZ8dCu60?si=slqORsDFpeU0dd8e
 
 En el video muestro la topología, la configuración del FortiGate y del Jump Server, y las pruebas con los dos usuarios:
 

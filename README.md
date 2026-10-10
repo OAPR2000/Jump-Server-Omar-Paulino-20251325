@@ -779,7 +779,7 @@ La demostración completa está en el [video](#video-de-demostración). Los coma
 | 8 | VPN admin1325 | Web Client como admin1325 | Web, PuTTY y Escritorio remoto | Usuario con privilegios |
 | 9 | App PuTTY (admin1325) | SSH a 10.13.25.130 como `omar` | Entra a la consola del Web Server | Jump → Web por SSH |
 | 10 | App Escritorio remoto (admin1325) | RDP a 10.13.25.130 | Aparece la pantalla de login de xrdp | Jump → Web por RDP |
-| 11 | App Web (admin1325) | Sistema de Caja | Carga por HTTPS | Jump → Web por HTTPS |
+| 11 | App Web (admin1325) | App Web publicada junto a las demas aplicaciones| Carga por HTTPS (Misma app que se abre en la prueba 4) | Jump → Web por HTTPS |
 | 12 | VPN admin1325 | `Test-NetConnection 10.13.25.138 -Port 3389` | True (origen 10.25.13.10) | RDP del admin al Jump |
 | 13 | VPN admin1325 | `Test-NetConnection 10.13.25.130 -Port 22` | False · log DENY-VPN-A-WEB | Ni el admin entra directo al Web Server |
 

@@ -30,7 +30,6 @@ En el video muestro la topología, la configuración del FortiGate y del Jump Se
 10. [PC-USUARIOS: VPN y RemoteApp Web Client](#10-pc-usuarios-vpn-y-remoteapp-web-client)
 11. [Resumen de las reglas de acceso](#11-resumen-de-las-reglas-de-acceso)
 12. [Pruebas y resultados](#12-pruebas-y-resultados)
-13. [Problemas que encontré y cómo los resolví](#13-problemas-que-encontré-y-cómo-los-resolví)
 
 ---
 

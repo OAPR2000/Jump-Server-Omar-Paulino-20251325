@@ -13,7 +13,7 @@ DNSServer            : 127.0.0.1
 
 Server                                             Roles
 ------                                             -----
-OMAR1325.OMAR1325.LOCAL                            {RDS-RD-SERVER, RDS-CONNECTION-BROKER, RDS-WEB-ACCESS, RDS-G...
+OMAR1325.OMAR1325.LOCAL                            {RDS-RD-SERVER, RDS-CONNECTION-BROKER, RDS-WEB-ACCESS)
 
 === RemoteApps ===
 

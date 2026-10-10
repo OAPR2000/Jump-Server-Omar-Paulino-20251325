@@ -1,0 +1,8 @@
+! R1-1325
+show ip interface brief
+show ip dhcp binding
+show ip nat translations
+show ip route
+! SW1-1325
+show vlan brief
+show interfaces trunk

@@ -1,0 +1,74 @@
+SW1-1325#show running-config
+Building configuration...
+
+Current configuration : 3253 bytes
+!
+! Last configuration change at 02:36:51 UTC Sat Oct 10 2026
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname SW1-1325
+!
+boot-start-marker
+boot-end-marker
+!
+no aaa new-model
+!
+no ip domain-lookup
+ip cef
+no ipv6 cef
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface GigabitEthernet0/0
+ description Troncal hacia FW1 port2
+ switchport trunk allowed vlan 10,99
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 99
+ switchport mode trunk
+ switchport nonegotiate
+ negotiation auto
+!
+interface GigabitEthernet0/1
+ description PC-USUARIOS
+ switchport access vlan 10
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/2
+ description webterm-1 (gestion)
+ switchport access vlan 99
+ switchport mode access
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/3
+ negotiation auto
+!
+interface GigabitEthernet1/0
+ negotiation auto
+!
+interface GigabitEthernet1/1
+ negotiation auto
+!
+interface GigabitEthernet1/2
+ negotiation auto
+!
+interface GigabitEthernet1/3
+ negotiation auto
+!
+ip forward-protocol nd
+!
+ip http server
+ip http secure-server
+!
+ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+!
+control-plane

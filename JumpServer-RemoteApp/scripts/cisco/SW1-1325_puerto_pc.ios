@@ -1,0 +1,8 @@
+! SW1-1325: unico cambio respecto a la Infraestructura 3
+enable
+configure terminal
+interface GigabitEthernet0/1
+ description PC-USUARIOS
+end
+write memory
+show vlan brief

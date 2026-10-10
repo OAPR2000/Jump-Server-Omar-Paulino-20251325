@@ -1,0 +1,41 @@
+Shrew Soft VPN Client 2.2.2 (Standard) - perfil VPN-1325
+=========================================================
+[General]
+  Host Name or IP Address ...... 200.25.13.25
+  Port ......................... 500
+  Auto Configuration ........... ike config pull
+  Adapter Mode ................. Use a virtual adapter and assigned address
+  Obtain Automatically ......... marcado
+  MTU .......................... 1300
+[Client]
+  NAT Traversal ................ force-rfc (UDP 4500)
+  IKE Fragmentation ............ enable
+  Dead Peer Detection .......... marcado
+  ISAKMP Failure Notifications . marcado
+[Name Resolution]
+  DNS / WINS ................... desmarcados (se usa el archivo hosts)
+[Authentication]
+  Authentication Method ........ Mutual PSK + XAuth
+  Local Identity ............... IP Address (automatica)
+  Remote Identity .............. IP Address (automatica)
+  Pre Shared Key ............... Clave1325!
+[Phase 1]
+  Exchange Type ................ main
+  DH Exchange .................. group 5
+  Cipher Algorithm ............. des
+  Hash Algorithm ............... md5
+  Key Life Time limit .......... 86400
+[Phase 2]
+  Transform Algorithm .......... esp-des
+  HMAC Algorithm ............... md5
+  PFS Exchange ................. group 5
+  Compress Algorithm ........... disabled
+  Key Life Time limit .......... 28800
+[Policy]
+  Policy Generation Level ...... unique
+  Obtain Topology Automatically  desmarcado
+  Remote Network Resource ...... include 10.13.25.128 / 255.255.255.240
+
+Credenciales XAuth al conectar:
+  usuario1325 / Usuario1325!   (usuario sin privilegios)
+  admin1325   / Admin1325!     (usuario con privilegios)

@@ -1,0 +1,66 @@
+=== IP ===
+
+InterfaceAlias       : Ethernet0 2
+InterfaceIndex       : 13
+InterfaceDescription : Intel(R) PRO/1000 MT Network Connection
+NetProfile.Name      : Red 4
+IPv4Address          : 10.13.25.138
+IPv6DefaultGateway   :
+IPv4DefaultGateway   : 10.13.25.137
+DNSServer            : 127.0.0.1
+
+=== Servidores RDS ===
+
+Server                                             Roles
+------                                             -----
+OMAR1325.OMAR1325.LOCAL                            {RDS-RD-SERVER, RDS-CONNECTION-BROKER, RDS-WEB-ACCESS, RDS-G...
+
+=== RemoteApps ===
+
+DisplayName         : Escritorio remoto (RDP)
+FilePath            : C:\Windows\system32\mstsc.exe
+CommandLineSetting  : DoNotAllow
+RequiredCommandLine :
+UserGroups          : {OMAR-1325\GRP-RA-ADMINS}
+
+DisplayName         : Web - Sistema de Caja
+FilePath            : C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
+CommandLineSetting  : Require
+RequiredCommandLine : https://10.13.25.130
+UserGroups          : {OMAR-1325\GRP-RA-USUARIOS, OMAR-1325\GRP-RA-ADMINS}
+
+DisplayName         : PuTTY (SSH)
+FilePath            : c:\Program Files\PuTTY\putty.exe
+CommandLineSetting  : DoNotAllow
+RequiredCommandLine :
+UserGroups          : {OMAR-1325\GRP-RA-ADMINS}
+
+=== Grupos de la coleccion ===
+
+CollectionName                 UserGroup
+--------------                 ---------
+QuickSessionCollection         {OMAR-1325\GRP-RA-USUARIOS, OMAR-1325\GRP-RA-ADMINS}
+
+=== Certificados ===
+
+Role          Level          ExpiresOn                           IssuedTo
+----          -----          ---------                           --------
+RDRedirector  No es de co... 10/08/2027 23:53:59                 CN=omar1325.omar1325.local
+RDPublishing  No es de co... 10/08/2027 23:53:59                 CN=omar1325.omar1325.local
+RDWebAccess   No es de co... 10/08/2027 23:53:59                 CN=omar1325.omar1325.local
+RDGateway     No es de co... 10/08/2027 23:53:59                 CN=omar1325.omar1325.local
+
+=== Licencias ===
+
+Mode                 LicenseServer
+----                 -------------
+PerUser              {OMAR1325.Omar1325.local}
+
+=== Grupos AD ===
+GRP-RA-USUARIOS
+
+Name                    SamAccountName
+----                    --------------
+Usuario Sin Privilegios usuario1325
+GRP-RA-ADMINS
+Admin Con Privilegios   admin1325

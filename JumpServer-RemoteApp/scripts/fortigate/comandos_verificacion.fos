@@ -1,0 +1,14 @@
+# Verificacion en FMW2-1325
+get system interface physical
+get router info routing-table all
+show vpn ipsec phase1-interface
+show vpn ipsec phase2-interface
+diagnose vpn ike gateway list
+diagnose vpn tunnel list
+show firewall policy
+# Depuracion del flujo (si un paquete no pasa)
+diagnose debug flow filter addr 10.13.25.138
+diagnose debug flow show function-name enable
+diagnose debug enable
+diagnose debug flow trace start 20
+diagnose debug disable

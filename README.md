@@ -801,20 +801,3 @@ Y los bloqueos: los intentos de `usuario1325 (10.25.13.10)` hacia `10.13.25.138`
 ![Forward Traffic denegado](JumpServer-RemoteApp/images/14_fw_forward_denies.png)
 
 En la columna *Source* el FortiGate muestra el **nombre del usuario de la VPN** junto a su IP del túnel. Así queda auditado qué usuario hizo cada intento.
-
----
-
-## 13. Problemas que encontré y cómo los resolví
-
-| Problema | Causa | Solución |
-| --- | --- | --- |
-| FortiClient: *SSL exit error* al conectar la SSL-VPN | El FortiGate solo ofrecía TLS débil y FortiClient lo rechazaba | Cambié a VPN IPsec de acceso remoto con Shrew Soft VPN Client |
-| Shrew: *Phase2 key life time... between 60 and 28800* | Shrew no acepta más de 28800 s | Puse 28800 s en Shrew y en la Fase 2 del FortiGate |
-| Shrew: *negotiation timeout occurred* | El túnel no respondía en la IP pública, que es secundaria en port1 | `set local-gw 200.25.13.25` |
-| El túnel subía pero las respuestas no llegaban al PC | El ESP puro no atraviesa el PAT del R1 | `set nattraversal forced` en el FortiGate y NAT Traversal *force-rfc* en Shrew |
-| El túnel subía, pero el FortiGate descartaba las respuestas (*No matching IPsec selector, drop*) | Shrew negociaba un selector que no coincidía | Policy de Shrew: *unique*, sin *Obtain Topology*, include `10.13.25.128/255.255.255.240` |
-| `New-ADUser` creaba las cuentas deshabilitadas | La contraseña contenía el nombre de la cuenta y no cumplía la complejidad del dominio | Contraseñas del dominio `Usr#Lab2025!` y `Adm#Lab2025!` |
-| Web Client: *la cuenta no está autorizada para el inicio de sesión remoto* | En un controlador de dominio solo los administradores entran por RDS | GPO *Permitir inicio de sesión a través de Servicios de Escritorio remoto* (sección 9.3) |
-| Web Client: *No pudimos conectarnos a la puerta de enlace* | El PC no confiaba en el certificado del Jump Server | Instalé `rds1325.cer` en las entidades raíz de confianza del PC (sección 10.3) |
-| Web Client: *Sign in failed* | El navegador estaba en modo InPrivate | Uso una ventana normal del navegador |
-| La VM del PC aparecía como *Network cable unplugged* | La había encendido desde VMware y no desde GNS3 | La enciendo y apago siempre desde GNS3 |

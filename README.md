@@ -79,7 +79,7 @@ flowchart TB
     FW["FMW2-1325 (FortiGate 7.0.9)<br/>port1: 192.168.42.25 + 200.25.13.25<br/>VPN IPsec VPN-RA-1325"]
     SW1["SW1-1325<br/>VLAN 10"]
     SW2["SW2-1325"]
-    PC["PC-USUARIOS (Windows 11)<br/>VLAN 10 · DHCP 10.13.25.10<br/>Shrew VPN · 10.25.13.x"]
+    PC["PC-USUARIOS (Windows 10)<br/>VLAN 10 · DHCP 10.13.25.10<br/>Shrew VPN · 10.25.13.x"]
     WEB["WEB-CAJA (Ubuntu)<br/>10.13.25.130/29<br/>HTTPS · SSH · RDP"]
     WT["webterm-1<br/>192.168.25.2 (gestión)"]
     JUMP["JUMP-1325 / OMAR1325<br/>Windows Server 2022<br/>10.13.25.138/29<br/>AD + RDS + RemoteApp"]

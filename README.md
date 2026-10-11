@@ -1,7 +1,7 @@
 # Infraestructura 2: Jump Server con RemoteApp y VPN de acceso remoto
 
 **Autor:** Omar Paulino · **Matrícula:** 20251325
-**Plataforma:** GNS3 · FortiGate VM 7.0.9 · Cisco c2691 · Cisco IOSvL2 · Windows Server 2022 · Windows 11 · Ubuntu Cloud 24.04 · VMware Workstation
+**Plataforma:** GNS3 · FortiGate VM 7.0.9 · Cisco c2691 · Cisco IOSvL2 · Windows Server 2022 · Windows 10 · Ubuntu Cloud 24.04 · VMware Workstation
 
 ---
 

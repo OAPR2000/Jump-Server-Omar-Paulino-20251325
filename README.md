@@ -263,7 +263,7 @@ interface GigabitEthernet0/1
 
 ## 7. FortiGate (FMW2-1325)
 
-**Nota:** la configuración del FortiGate la hice **de forma gráfica (GUI)** desde el Firefox del webterm-1, entrando a `http://192.168.25.1`. Dos ajustes del túnel IPsec (sección 7.6 e) los apliqué desde la consola CLI integrada en la misma GUI (icono `>_`). La configuración completa en texto está en [`running-configs/FMW2-1325.conf`](JumpServer-RemoteApp/running-configs/FMW2-1325.conf).
+**Nota:** la configuración del FortiGate la hice **de forma gráfica (GUI)** desde el Firefox del webterm-1, entrando a `http://192.168.25.1`. La configuración completa en texto está en [`running-configs/FMW2-1325.conf`](JumpServer-RemoteApp/running-configs/FMW2-1325.conf).
 
 ### 7.1 Network → Interfaces
 
@@ -392,22 +392,6 @@ Después lo convertí en túnel personalizado (*Convert To Custom Tunnel*) para 
 | Key Lifetime | 28800 s (Shrew no acepta más) |
 
 ![Phase 2](JumpServer-RemoteApp/images/09_fw_ipsec_fase2.png)
-
-**e) Los dos ajustes desde la consola CLI de la GUI:**
-
-```
-config vpn ipsec phase1-interface
-    edit "VPN-RA-1325"
-        set local-gw 200.25.13.25
-        set nattraversal forced
-    next
-end
-```
-
-| Comando | Para qué |
-| --- | --- |
-| `set local-gw 200.25.13.25` | Hace que el túnel responda en la IP pública secundaria. Sin esto solo respondía en la principal (`192.168.42.25`) y Shrew daba *negotiation timeout* |
-| `set nattraversal forced` | Obliga a usar NAT-T (ESP dentro de UDP 4500). El PC está detrás del PAT del R1, y el ESP puro no vuelve a través de un PAT |
 
 **Sobre DES/MD5:** la licencia de evaluación de FortiOS 7.0.9 solo permite cifrado de baja seguridad. En un entorno real usaría AES-256 con SHA-256 y DH 14 o superior.
 

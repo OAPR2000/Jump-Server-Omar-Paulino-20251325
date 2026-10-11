@@ -650,7 +650,7 @@ Publish-RDWebClientPackage -Type Production -Latest
 
 ## 10. PC-USUARIOS: VPN y RemoteApp Web Client
 
-**Sistema:** Windows 11 en VMware, conectado a SW1 Gi0/1 (VLAN 10). Recibe por DHCP del R1 la IP `10.13.25.10/25`, gateway `10.13.25.1`. Es el mismo PC para los dos usuarios: el usuario se elige al conectar la VPN y al entrar al Web Client.
+**Sistema:** Windows 10 en VMware, conectado a SW1 Gi0/1 (VLAN 10). Recibe por DHCP del R1 la IP `10.13.25.10/25`, gateway `10.13.25.1`. Es el mismo PC para los dos usuarios: el usuario se elige al conectar la VPN y al entrar al Web Client.
 
 ### 10.1 Shrew Soft VPN Client
 
